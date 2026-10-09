@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "express";
 import userRouter from './Routes/user.js'
+import productRouter from './Routes/product.js'
+import cartRouter from './Routes/cart.js'
 
 import {config} from "dotenv";
 
@@ -16,6 +18,11 @@ config({path:'.env'})
 // user router
 app.use('/api/user',userRouter)
 
+//product router
+app.use('/api/product',productRouter)
+
+// cart router
+app.use('/api/cart',cartRouter);
 
 // home route
 app.get("/", (req, res) => {
